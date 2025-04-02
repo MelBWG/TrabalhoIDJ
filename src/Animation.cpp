@@ -7,11 +7,6 @@
 
 #include "Animation.h"
 
-Animation::Animation() {
-	// TODO Auto-generated constructor stub
-
-}
-
 Animation::~Animation() {
 	// TODO Auto-generated destructor stub
 }

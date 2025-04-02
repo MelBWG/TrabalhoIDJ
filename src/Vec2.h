@@ -12,7 +12,7 @@ class Vec2 {
 public:
 	float x;
 	float y;
-	Vec2(float x=0, float y=0) : x{x}, y{y} {};
+	Vec2(float x=0, float y=0) : x{x}, y{y} {}
 	virtual ~Vec2();
 
 	void escalarMult(float escalar);

@@ -14,7 +14,7 @@ class Rect {
 public:
 	float x, y;
 	float w ,h;
-	Rect(int x=0, int y=0, int w=0, int h=0) : x{x}, y{y}, w{w}, h{h} {};
+	Rect(float x=0, float y=0, float w=0, float h=0) : x{x}, y{y}, w{w}, h{h} {}
 	virtual ~Rect();
 
 	Rect vectorSum(Vec2 vector);

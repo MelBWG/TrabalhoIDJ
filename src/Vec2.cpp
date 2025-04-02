@@ -49,3 +49,5 @@ Vec2::~Vec2() {
 	// TODO Auto-generated destructor stub
 }
 
+// Inclui testes unitários
+

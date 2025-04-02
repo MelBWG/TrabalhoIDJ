@@ -10,7 +10,10 @@
 
 class Animation {
 public:
-	Animation();
+	int frameStart;
+	int frameEnd;
+	int frameTime;
+	Animation(int frameStart, int frameEnd, float frameTime) : frameStart{}, frameEnd{}, frameTime{} {}
 	virtual ~Animation();
 };
 

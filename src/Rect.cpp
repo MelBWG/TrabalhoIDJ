@@ -18,7 +18,9 @@ Vec2 Rect::center() {
 }
 
 float Rect::recsCenterDistance(Rect rect1, Rect rect2) {
-
+	Vec2 center1 = rect1.center();
+	Vec2 center2 = rect2.center();
+	return Vec2::vectDistance(center1, center2);
 }
 
 Rect::~Rect() {

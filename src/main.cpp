@@ -1,6 +1,4 @@
 #include "Game.h"
-//#include "State.h"
-//#include "Sprite.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
