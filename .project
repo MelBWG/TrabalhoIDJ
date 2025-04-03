@@ -26,9 +26,24 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>Debug/Assets</name>
-			<type>2</type>
-			<location>C:/IDJ/A/Debug/Assets</location>
+			<name>Debug/SDL2.dll</name>
+			<type>1</type>
+			<location>C:/IDJ/A/Debug/SDL2.dll</location>
+		</link>
+		<link>
+			<name>Debug/SDL2_image.dll</name>
+			<type>1</type>
+			<location>C:/IDJ/A/Debug/SDL2_image.dll</location>
+		</link>
+		<link>
+			<name>Debug/SDL2_mixer.dll</name>
+			<type>1</type>
+			<location>C:/IDJ/A/Debug/SDL2_mixer.dll</location>
+		</link>
+		<link>
+			<name>Debug/SDL2_ttf.dll</name>
+			<type>1</type>
+			<location>C:/IDJ/A/Debug/SDL2_ttf.dll</location>
 		</link>
 		<link>
 			<name>src/Assets/Music/BGM.wav</name>

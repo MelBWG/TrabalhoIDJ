@@ -11,12 +11,19 @@
 
 State::State() {
 	this->quitRequested = false;
+	GameObject* backgroundGameObject = new GameObject();
+	SpriteRenderer* backgroundSpriteRenderer = new SpriteRenderer(*backgroundGameObject, "./Assets/Sprites/Background.png");
+	backgroundGameObject->AddComponent(backgroundSpriteRenderer);
+	this->AddObject(backgroundGameObject);
+	GameObject* zombieGameObject = new GameObject();
+	zombieGameObject->box.x = 600;
+	zombieGameObject->box.y = 450;
+	Zombie* zombie = new Zombie(*zombieGameObject);
+	zombieGameObject->AddComponent(zombie);
+	this->AddObject(zombieGameObject);
 	char pathMsc[50] = "./Assets/Music/BGM.wav";
 	std::cout << pathMsc << std::endl;
-	char pathTxt[50] = "./Assets/Sprites/Background.png";
-	Sprite* spr_buffer = new Sprite(pathTxt);
 	Music* msc_buffer = new Music(pathMsc);
-	this->bg = *spr_buffer;
 	this->music = *msc_buffer;
 	music.Play();
 }
@@ -30,19 +37,37 @@ void State::LoadAssets() {
 // Atualiza estados de entidade, roda teste de colisões
 // Checagem do encerramento do jogo.
 void State::Update(float dt) {
+	for(auto&& i : this->objectArray) {
+		i->Update(dt);
+	}
 	if(SDL_QuitRequested() == true) {
 		std::cout << "requested quit";
 		this->quitRequested=true;
 	}
+	for (int i = 0; i<objectArray.size(); i++) {
+		if(objectArray.at(i)->IsDead()) {
+			this->objectArray.erase(this->objectArray.begin()+i);
+		}
+	}
 }
 
 void State::Render() {
-	this->bg.Render(0,0);
+	for(auto&& i : this->objectArray) {
+		i->Render();
+	}
 }
+
+void State::AddObject(GameObject* go) {
+	this->objectArray.emplace_back(go);
+}
+
 
 bool State::QuitRequested() {
 	return this->quitRequested;
 }
 
 
+State::~State() {
+	this->objectArray.clear();
+}
 
