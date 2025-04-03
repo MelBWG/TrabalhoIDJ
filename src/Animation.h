@@ -13,7 +13,8 @@ public:
 	int frameStart;
 	int frameEnd;
 	int frameTime;
-	Animation(int frameStart, int frameEnd, float frameTime) : frameStart{}, frameEnd{}, frameTime{} {}
+	Animation() = default;
+	Animation(int frameStart, int frameEnd, float frameTime) : frameStart{frameStart}, frameEnd{frameEnd}, frameTime{frameTime} {}
 	virtual ~Animation();
 };
 
